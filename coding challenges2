@@ -1,0 +1,21 @@
+def LetterCount(strParam):
+    words = strParam.split()  # Split the string into words
+    
+    max_letters = 0
+    max_word = ""
+    
+    for word in words:
+        distinct_letters = len(set(word))
+        if distinct_letters > max_letters:
+            max_letters = distinct_letters
+            max_word = word
+    
+    # Return the word with the maximum number of distinct letters
+    # If all words have the same number of distinct letters, return -1
+    if max_letters > 0:
+        return max_word
+    else:
+        return "-1"
+
+# Keep this function call
+print(LetterCount(input()))
